@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    transition: all .3 linear ease;
+}
+
+:root{
+    --black:#2c2c54;
+    --white:#ffff;
+    --border:.2rem solid rgba(0,0,0,.1);
+}
+
+html{
+    font-size: 62,5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6,7rem;
+    overflow-x: hidden;
+}
+
+.test_template{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin:10%;
+}
+.test_template .form-party{
+    display: block;
+    border: .1rem solid rgba(0,0,0,.1);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.12),1px 1px 3px rgba(0,0,0,.21);
+    height: auto;
+}
+form{
+    display: block;
+    padding: 2rem;
+}
+
+form .content_form{
+    display: flex;
+    margin: .5rem;
+}
+form .content_form .input_form{
+    display: block;
+    margin: 1rem;
+}
+form .content_form .input_form label{
+    display: block;
+    font-size: 1.2rem;
+    color: #2c2c54;
+    font-weight: 2rem;
+}
+#lboots{
+    display: block;
+    font-size: 1.2rem;
+    color: #2c2c54;
+    font-weight: 2rem;
+}
+#boots{
+    border: .1rem solid rgba(0,0,0,.1);
+    height: 3rem;
+    min-width: 20rem;
+    padding: .5rem;
+}
+form .content_form .input_form input{
+    border: .1rem solid rgba(0,0,0,.1);
+    height: 3rem;
+    min-width: 20rem;
+    padding: .5rem;
+}
+form .content_form .input_form select{
+    border: .1rem solid rgba(0,0,0,.1);
+    height: 3rem;
+    min-width: 20rem;
+    padding: .5rem;
+    
+}
+.btn{
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    border: .1rem solid rgba(0,0,0,.1);
+    background-color: #2c2c54;
+    cursor: pointer;
+}

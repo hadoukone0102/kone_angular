@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    transition: all .3 linear ease;
+}
+
+:root{
+    --black:#2c2c54;
+    --white:#ffff;
+    --border:.2rem solid rgba(0,0,0,.1);
+}
+
+html{
+    font-size: 62,5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6,7rem;
+    overflow-x: hidden;
+}
+
+*::selection{
+    background-color:var(--black);
+    color: var(--white);
+}
+
+section{
+    padding: 2rem;
+    display: block;
+}
+.content_activity{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,auto);
+    gap: 20;
+    text-align: center;
+}
+.box_activity{
+    border: .1rem solid rgba(0,0,0,.1);
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: .5rem;
+}

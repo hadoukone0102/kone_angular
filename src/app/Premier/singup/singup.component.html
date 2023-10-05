@@ -1,0 +1,155 @@
+<div class="signup">
+    <div class="form-party">
+        <form novalidate (ngSubmit)="onSinupTest(SinupTest)" #SinupTest="ngForm">
+            <div class="box">
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Nom</label>
+                        <input type="text"
+                            placeholder="Exemple@gmail.com"
+                            name="nom"
+                            [(ngModel)]="signup.nom"
+                            required
+                            #nomvar="ngModel"
+                            [ngClass]="{'is-invalid': nomvar.touched && !nomvar.valid}">
+                            <div class="invalid-feedback">
+                                <span *ngIf="nomvar.errors">
+                                    Entrez votre Nom !
+                                </span>
+                            </div>
+                    </div>
+                    <div class="input_form">
+                        <label for="inputEmail">Prenom</label>
+                        <input type="text"
+                        name="prenom"
+                        [(ngModel)]="signup.prenom"
+                        required
+                        #prenomvar="ngModel"
+                        [ngClass]="{'is-invalid': prenomvar.touched && !prenomvar.valid}">
+                        <div class="invalid-feedback">
+                            <span class="" *ngIf="prenomvar.errors">
+                                Entrez votre Prenom !
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Contact</label>
+                        <input type="text"
+                               placeholder="0851441548"
+                               name="contact"
+                               [(ngModel)]="signup.contact"
+                               required
+                               #contactVar="ngModel"
+                               [ngClass]="{'is-invalid': contactVar.touched && !contactVar.valid}"
+                               (blur)="validatePhoneNumber()">
+                        <div class="invalid-feedback">
+                            <span *ngIf="contactVar.errors">
+                                Entrez votre contact
+                            </span>
+                            <span *ngIf="phoneNumberInvalid">
+                                Le numéro de téléphone doit avoir 10 chiffres.
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="input_form">
+                        <label for="inputEmail">Sexe</label>
+                        <select name="sexe"
+                            id="Sexe"
+                            [(ngModel)]="signup.sexe"
+                            required
+                            #sexevar="ngModel"
+                            [ngClass]="{'is-invalid': sexevar.touched && !sexevar.valid}">
+                            <option value="M">Masculin</option>
+                            <option value="F">Femme</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="sexevar.errors">
+                                Veuillez identifier votre sexe svp
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" 
+                            placeholder="Exemple@gmail.com"
+                            name="email"
+                            [(ngModel)]="signup.email"
+                            required
+                            #emailvar="ngModel"
+                            email
+                            [ngClass]="{'is-invalid':emailvar.touched && !emailvar.valid}">
+                            <div class="invalid-feedback">
+                                <span *ngIf="emailvar.errors">
+                                    Entrez votre email
+                                </span>
+                            </div>
+                    </div>
+
+                    <div class="input_form">
+                        <label for="inputEmail">Mot de Passe</label>
+                        <input type="password"
+                        name="mdp"
+                        [(ngModel)]="signup.mdp"
+                        required
+                        #mdpvar="ngModel"
+                        [ngClass]="{'is-invalid':mdpvar.touched && !mdpvar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="mdpvar.errors">
+                                Entrez un mot de passe 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row mb-3 border">
+                <div class="col-mb-3">
+                    <input type="checkbox" class="p-2 m-3" name="autre" [(ngModel)]="signup.second">
+                    <span>Afficher le reste</span>
+                </div>
+            </div>
+
+            <div class="" *ngIf="signup.second">
+                
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="form-row mb-3 border">
+                        <div class="col-mb-3">
+                            <input type="text" placeholder="votre Ville" id="boots" class="form-control border">
+                        </div>
+                    </div>
+                    <div class="form-row mb-3 border">
+                        <div class="col-mb-3">
+                            <select name="" id="boots">
+                                <option value="">Selectionner un departement</option>
+                                <option value="A">Abidjan</option>
+                                <option value="B">djan</option>
+                                <option value="C">Abi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="form-row mb-3 border">
+                        <div class="col-mb-3">
+                            <input type="number" placeholder="code postal" id="boots" class="form-control border">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="input_form">
+                <button type="submit" [disabled]="!SinupTest.valid" class="btn">Connexion</button>
+            </div>
+            
+        </form>
+    </div>
+</div>

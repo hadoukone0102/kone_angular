@@ -1,0 +1,180 @@
+<div class="test_template">
+    <div class="form-party">
+        <h3 class="text-center m-2">Formulaire d'inscription</h3>
+        <form novalidate (ngSubmit)="saveDAta(registerForm)" #registerForm="ngForm">
+
+            <div class="box_content">
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Nom</label>
+                        <input type="text"
+                            placeholder="Exemple@gmail.com"
+                            name="nom"
+                            [(ngModel)]="user.nom"
+                            required
+                            #nomVar ="ngModel"
+                            [ngClass]="{ 'is-invalid ': nomVar.touched && !nomVar.valid }"
+                            >
+                            <div class="invalid-feedback">
+                                <span *ngIf="nomVar.errors">
+                                    Entrez votre nom !
+                                </span>
+                            </div>
+                    </div>
+                    <div class="input_form">
+                        <label for="inputEmail">Prenom</label>
+                        <input type="text"
+                        name="prenom"
+                        [(ngModel)]="user.prenom"
+                        required
+                        #prenomVar="ngModel"
+                        [ngClass]="{'is-invalid': prenomVar.touched && !prenomVar.valid}"
+                        >
+                        <div class="invalid-feedback">
+                            <span *ngIf="prenomVar.errors">
+                                Entrez votre Prenom
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Contact</label>
+                        <input type="number" 
+                            placeholder="085144154851185"
+                            name="contact"
+                            [(ngModel)]="user.contact"
+                            required
+                            #contactVar="ngModel"
+                            [ngClass]="{'is-invalid': contactVar.touched && !contactVar.valid}">
+                            <div class="invalid-feedback">
+                                <span *ngIf="contactVar.errors">
+                                    Entrez votre contact
+                                </span>
+                            </div>
+                    </div>
+                    
+                    <div class="input_form">
+                        <label for="inputEmail">Sexe</label>
+                        <select name="sexe"
+                            id="Sexe"
+                            [(ngModel)]="user.sexe"
+                            required
+                            #sexeVar ="ngModel"
+                            [ngClass]="{'is-invalid': sexeVar.touched && !sexeVar.valid}"
+                            >
+                            <option value="M">Masculin</option>
+                            <option value="F">Femme</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="sexeVar.errors">
+                                Veuillez choisir un sexe svp !
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_form">
+                    <div class="input_form">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" 
+                            placeholder="Exemple@gmail.com"
+                            name="email"
+                            [(ngModel)]="user.email"
+                            required
+                            #emailVar="ngModel"
+                            [ngClass]="{'is-invalid': emailVar.touched && !emailVar.valid}">
+                            <div class="invalid-feedback">
+                                <span *ngIf="emailVar.errors">
+                                    Entrez votre email
+                                </span>
+                            </div>
+                    </div>
+                
+                    <div class="input_form">
+                        <label for="inputEmail">Mot de Passe</label>
+                        <input type="password"
+                        name="mdp"
+                        [(ngModel)]="user.mdp"
+                        required
+                        #mdpVar="ngModel"
+                        [ngClass]="{'is-invalid': mdpVar.touched && !mdpVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="mdpVar.errors">
+                                Entrez un mot de Passe
+                            </span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="form-row mb-3 border">
+                <div class="col-md-12">
+                    <div class="form-check m-4 pt-3">
+                        <input type="checkbox" class="" style="width: 1.5rem;" name="sendCatalog" [(ngModel)]="user.sendCatalog">
+                        <span>Oui je souhaite renseigner les autres information</span>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="user.sendCatalog">
+
+                <div class="d-flex align-items-center justify-content-between ml-2 mr-3">
+
+                    <div class="form-row mb-3">
+                        <div class="col-md-12">
+                            <label for="" id="lboots">Addresse 1</label>
+                            <input type="text" id="boots" class="form-control border">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-3">
+                        <div class="col-md-12">
+                            <label for="" id="lboots">Addresse 1</label>
+                            <input type="text" id="boots" class="form-control border">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="d-flex align-items-center justify-content-between ml-2 mr-3">
+                    
+                    <div class="form-row mb-3">
+                        <div class="col-md-12">
+                            <label for="" id="lboots">Ville </label>
+                            <input type="text" id="boots" class="form-control border">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-3">
+                        <div class="col-md-12">
+                            <label for="" id="lboots">Département</label>
+                            <select name="" id="boots" class="form-control border">
+                                <option value="">Selectionner un département</option>
+                                <option value="A">Abidjan nord</option>
+                                <option value="B">Abidjan sud</option>
+                                <option value="C">Abidjan est</option>
+                                <option value="D">Abidjan ouest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="d-flex align-items-center justify-content-between ml-2 m-3">
+                    <div class="col-md-12">
+                        <label for="">Code Postal</label>
+                        <input type="number" id="boots" class="border form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="input_form">
+                <button type="submit" [disabled]="!registerForm.valid" class="btn">test</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
